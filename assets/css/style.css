@@ -1,0 +1,354 @@
+:root {
+  --primary: #4356ff;
+  --secondary: #2c2c2c;
+  --primary-hover: #1c33ff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  color: var(--secondary);
+  position: relative;
+  font-family: "Tajawal", sans-serif;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/*
+==================
+===== Header =====
+==================
+*/
+
+header {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px 2px rgb(0 0 0 / 10%);
+  z-index: 99;
+}
+
+
+@media (min-width: 768px) {
+  header {
+    display: block ;
+  }
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  width: 180px;
+}
+
+header .logo img {
+  width: 100%;
+}
+
+header nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  font-weight: 500;
+  font-size: 18px;
+  margin-left: 30px;
+}
+
+header nav ul li a {
+  color: #2c2c2c;
+  text-decoration: none;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+header nav ul li a:hover::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--primary);
+}
+
+header .search-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  position: relative;
+}
+
+header .search-bar button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+header .search-bar input {
+  border: none;
+  outline: none;
+  font-family: inherit;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  padding: 5px 12px;
+  font-size: 16px;
+  transition: 0.3s ease-in;
+}
+
+header .search-bar button:hover ~ input {
+  background-color: var(--primary-hover);
+}
+
+header .search-bar input::placeholder {
+  font-family: inherit;
+  letter-spacing: 2px;
+}
+
+header .search-bar button:focus ~ input {
+  width: 200px;
+  padding-left: 30px;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 1px solid var(--secondary);
+}
+
+header .search-bar input:focus {
+  width: 200px;
+  padding-left: 30px;
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 1px solid var(--secondary);
+}
+
+header .search-bar:focus-within button {
+  color: var(--secondary);
+}
+
+
+/*
+==================
+== Hero Section ==
+==================
+*/
+
+#hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  padding: 90px 10px;
+  background: url(../img/91-917114_dot-pattern-png.png);
+  background-size: cover;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  #hero {
+    padding: 10px;
+  }
+}
+
+#hero .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column-reverse;
+  background-color: #fff;
+  padding: 40px 10px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 8px 2px rgb(0 0 0 / 10%);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  #hero .container {
+    flex-direction: row-reverse;
+    padding: 25px;
+  }
+}
+
+#hero .container .title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+#hero .container .anime-img img {
+  width: 100%;
+}
+
+#hero .container .genres {
+  display: flex;
+  align-items: center;
+}
+
+#hero .container .genres ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+#hero .container .genres ul li a {
+  color: var(--secondary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--secondary);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+#hero .container .genres ul li:hover a {
+  color: #fff;
+  background-color: var(--secondary);
+}
+
+#hero .container .story {
+  line-height: 1.8;
+}
+
+#hero .container a.btn {
+  display: block;
+  width: fit-content;
+  margin-top: 2rem;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 14px;
+  border-radius: 4px;
+  font-size: 17px;
+  background-color: var(--primary);
+  float: left;
+  margin-left: 45px;
+  transition: 0.3s;
+}
+
+#hero .container a.btn:hover {
+  background-color: var(--primary-hover);
+}
+
+#hero .container .badges {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+@media (min-width: 768px) {
+  #hero .container .anime-img {
+    width: 50%;
+  }
+  #hero .container .anime-info {
+    width: 50%;
+  }
+  #hero .container .badges {
+    top: 20px;
+    left: 60px;
+  }
+}
+
+#hero .container .badges span {
+  display: block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 16px;
+}
+
+#hero .left-angle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 20%);
+  cursor: pointer;
+}
+
+#hero .right-angle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  font-size: 20px;
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 1px 3px 1px rgb(0 0 0 / 20%);
+  cursor: pointer;
+}
+
+#hero .dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+#hero .dots .active {
+  background-color: var(--primary);
+  border-radius: 50%;
+  color: var(--primary);
+}
