@@ -71,7 +71,7 @@ header .container {
 header .logo {
   display: flex;
   align-items: center;
-  width: 180px;
+  width: 170px;
 }
 
 header .logo img {
